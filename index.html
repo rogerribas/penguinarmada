@@ -85,5 +85,45 @@
         });
     </script>
 
+ <!-- Formulario de registro -->
+ <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff; z-index: 999;">
+    <h2>Registra tu email</h2>
+    <form id="registrationForm">
+        <input type="email" id="emailInput" placeholder="Ingrese su email" required>
+        <button type="button" onclick="registerEmail()">Enviar</button>
+    </form>
+    <p id="thankYouMessage" style="display: none; margin-top: 10px;">Muchas gracias por registrarte</p>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var video = document.getElementById('video-background');
+
+        // Check if the device is a mobile
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            video.src ="img/video-s.mp4";
+            // Replace "img/video-mobile.mp4" with the video for mobile
+        }
+    });
+
+    function registerEmail() {
+        var emailInput = document.getElementById('emailInput');
+        var thankYouMessage = document.getElementById('thankYouMessage');
+        var registrationForm = document.getElementById('registrationForm');
+
+        // Validar el email (puedes agregar una validación más robusta según tus necesidades)
+        var email = emailInput.value;
+        if (email && /\S+@\S+\.\S+/.test(email)) {
+            // Aquí puedes realizar cualquier acción adicional, como enviar el email a un servidor
+
+            // Mostrar el mensaje de agradecimiento y ocultar el formulario
+            thankYouMessage.style.display = 'block';
+            registrationForm.style.display = 'none';
+        } else {
+            alert('Por favor, ingrese un email válido.');
+        }
+    }
+</script>
+
 </body>
 </html>
