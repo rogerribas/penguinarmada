@@ -34,14 +34,14 @@
             margin-top: 10px;
         }
 
-        #video-background {
+        #image-background {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: -1; /* Place the video behind other elements */
+            z-index: -1; /* Place the image behind other elements */
         }
 
         /* Responsive styles for mobile */
@@ -56,6 +56,47 @@
                 margin-top: 5px;
             }
         }
+
+        /* Additional styles for the form */
+        form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+            z-index: 999;
+        }
+
+        input[type="email"] {
+            padding: 10px;
+            width: 250px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            background-color: #FFA500; /* Vivid orange */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #FF8C00; /* Darker shade on hover */
+        }
+
+        #thankYouMessage {
+            display: none;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -67,63 +108,43 @@
         </div>
     </header>
 
-    <video id="video-background" autoplay muted loop playsinline>
-        <source src="img/video.mp4" type="video/mp4">
-        <!-- Replace "img/video-desktop.mp4" with the video for desktop -->
-        Your browser does not support the video tag.
-    </video>
+    <!-- Image background -->
+    <img id="image-background" src="img/background-image.jpg" alt="Background Image">
+
+    <!-- Formulario de registro -->
+    <form id="registrationForm">
+        <h2>Registra tu email</h2>
+        <input type="email" id="emailInput" placeholder="Ingrese su email" required>
+        <button type="button" onclick="registerEmail()">Enviar</button>
+        <p id="thankYouMessage">Muchas gracias por registrarte</p>
+    </form>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            var video = document.getElementById('video-background');
-
-            // Check if the device is a mobile
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                video.src ="img/video-s.mp4";
-                // Replace "img/video-mobile.mp4" with the video for mobile
-            }
+            var image = document.getElementById('image-background');
+            // You can adjust the source and alt text accordingly
+            image.src = "img/background-image.jpg";
+            image.alt = "Background Image Alt Text";
         });
+
+        function registerEmail() {
+            var emailInput = document.getElementById('emailInput');
+            var thankYouMessage = document.getElementById('thankYouMessage');
+            var registrationForm = document.getElementById('registrationForm');
+
+            // Validar el email (puedes agregar una validación más robusta según tus necesidades)
+            var email = emailInput.value;
+            if (email && /\S+@\S+\.\S+/.test(email)) {
+                // Aquí puedes realizar cualquier acción adicional, como enviar el email a un servidor
+
+                // Mostrar el mensaje de agradecimiento y ocultar el formulario
+                thankYouMessage.style.display = 'block';
+                registrationForm.style.display = 'none';
+            } else {
+                alert('Por favor, ingrese un email válido.');
+            }
+        }
     </script>
-
- <!-- Formulario de registro -->
- <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff; z-index: 999;">
-    <h2>Registra tu email</h2>
-    <form id="registrationForm">
-        <input type="email" id="emailInput" placeholder="Ingrese su email" required>
-        <button type="button" onclick="registerEmail()">Enviar</button>
-    </form>
-    <p id="thankYouMessage" style="display: none; margin-top: 10px;">Muchas gracias por registrarte</p>
-</div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var video = document.getElementById('video-background');
-
-        // Check if the device is a mobile
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            video.src ="img/video-s.mp4";
-            // Replace "img/video-mobile.mp4" with the video for mobile
-        }
-    });
-
-    function registerEmail() {
-        var emailInput = document.getElementById('emailInput');
-        var thankYouMessage = document.getElementById('thankYouMessage');
-        var registrationForm = document.getElementById('registrationForm');
-
-        // Validar el email (puedes agregar una validación más robusta según tus necesidades)
-        var email = emailInput.value;
-        if (email && /\S+@\S+\.\S+/.test(email)) {
-            // Aquí puedes realizar cualquier acción adicional, como enviar el email a un servidor
-
-            // Mostrar el mensaje de agradecimiento y ocultar el formulario
-            thankYouMessage.style.display = 'block';
-            registrationForm.style.display = 'none';
-        } else {
-            alert('Por favor, ingrese un email válido.');
-        }
-    }
-</script>
 
 </body>
 </html>
