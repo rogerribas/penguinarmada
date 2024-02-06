@@ -5,47 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Company</title>
     <style>
-        /* ... (tu estilo existente) */
-        /* Additional style for the form */
-        #registrationForm {
-            position: absolute;
-            top: calc(50% + 250px);
-            left: 50%;
-            transform: translate(-50%, -50%);
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
             text-align: center;
-            color: #fff;
-            z-index: 999;
+            padding: 5px;
+            height: 50px; /* Adjust the height as needed */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        #registrationForm h2 {
-            margin-bottom: 20px;
-        }
-
-        #emailInput {
-            padding: 10px;
-            font-size: 16px;
-            border: 2px solid #fff;
-            border-radius: 0; /* No rounded corners */
-            margin-right: 10px;
-        }
-
-        #submitButton {
-            padding: 10px 20px;
-            font-size: 16px;
-            border: 2px solid #fff;
-            border-radius: 0; /* No rounded corners */
-            background-color: #ff7f00; /* Vivid orange */
-            color: #fff;
-            cursor: pointer;
-        }
-
-        #submitButton:hover {
-            background-color: #e66e00; /* Darker orange on hover */
-        }
-
-        #thankYouMessage {
-            display: none;
+        header img {
+            width: 30px;
+            height: auto;
+            margin-left: 20px;
             margin-top: 10px;
+        }
+
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Place the video behind other elements */
+        }
+
+        /* Responsive styles for mobile */
+        @media (max-width: 767px) {
+            header {
+                height: 40px; /* Adjust the height for mobile */
+            }
+
+            header img {
+                width: 20px; /* Adjust the size for mobile */
+                margin-left: 10px;
+                margin-top: 5px;
+            }
         }
     </style>
 </head>
@@ -64,8 +73,57 @@
         Your browser does not support the video tag.
     </video>
 
-    <!-- Formulario de registro -->
-    <div id="registrationForm">
-        <h2>Registra tu email</h2>
-        <form>
-            <input type="email
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var video = document.getElementById('video-background');
+
+            // Check if the device is a mobile
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                video.src ="img/video-s.mp4";
+                // Replace "img/video-mobile.mp4" with the video for mobile
+            }
+        });
+    </script>
+
+ <!-- Formulario de registro -->
+ <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff; z-index: 999;">
+    <h2>Registra tu email</h2>
+    <form id="registrationForm">
+        <input type="email" id="emailInput" placeholder="Ingrese su email" required>
+        <button type="button" onclick="registerEmail()">Enviar</button>
+    </form>
+    <p id="thankYouMessage" style="display: none; margin-top: 10px;">Muchas gracias por registrarte</p>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var video = document.getElementById('video-background');
+
+        // Check if the device is a mobile
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            video.src ="img/video-s.mp4";
+            // Replace "img/video-mobile.mp4" with the video for mobile
+        }
+    });
+
+    function registerEmail() {
+        var emailInput = document.getElementById('emailInput');
+        var thankYouMessage = document.getElementById('thankYouMessage');
+        var registrationForm = document.getElementById('registrationForm');
+
+        // Validar el email (puedes agregar una validación más robusta según tus necesidades)
+        var email = emailInput.value;
+        if (email && /\S+@\S+\.\S+/.test(email)) {
+            // Aquí puedes realizar cualquier acción adicional, como enviar el email a un servidor
+
+            // Mostrar el mensaje de agradecimiento y ocultar el formulario
+            thankYouMessage.style.display = 'block';
+            registrationForm.style.display = 'none';
+        } else {
+            alert('Por favor, ingrese un email válido.');
+        }
+    }
+</script>
+
+</body>
+</html>
