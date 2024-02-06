@@ -5,62 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Company</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            overflow: hidden; /* Prevent scrolling */
-        }
-
-        header {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 5px;
-            height: 50px; /* Adjust the height as needed */
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        header img {
-            width: 30px;
-            height: auto;
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-
-        #image-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1; /* Place the image behind other elements */
-        }
-
-        /* Responsive styles for mobile */
-        @media (max-width: 767px) {
-            header {
-                height: 40px; /* Adjust the height for mobile */
-            }
-
-            header img {
-                width: 20px; /* Adjust the size for mobile */
-                margin-left: 10px;
-                margin-top: 5px;
-            }
-        }
+        /* ... (tu estilo existente) */
 
         /* Additional styles for the form */
         form {
             position: absolute;
-            top: 50%;
+            top: calc(50% + 250px); /* Adjusted to move down by 250 pixels */
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
