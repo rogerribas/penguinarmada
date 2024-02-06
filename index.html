@@ -35,6 +35,12 @@
             margin-top: 10px;
         }
 
+        header #logo {
+            width: 50px; /* Adjust the width as needed */
+            height: auto;
+            margin-right: 20px;
+        }
+
         #image-background {
             position: fixed;
             top: 0;
@@ -55,6 +61,11 @@
                 width: 20px; /* Adjust the size for mobile */
                 margin-left: 10px;
                 margin-top: 5px;
+            }
+
+            header #logo {
+                width: 30px; /* Adjust the width for mobile */
+                margin-right: 10px;
             }
         }
 
@@ -112,6 +123,9 @@
             <img src="img/menu.png" alt="Menu Icon">
             <!-- Use "img/menu.png" for the small icon image -->
         </div>
+        <div id="logo-container">
+            <img id="logo" src="img/Logo.png" alt="Company Logo">
+        </div>
     </header>
 
     <!-- Image background -->
@@ -144,13 +158,4 @@
                 // Aquí puedes realizar cualquier acción adicional, como enviar el email a un servidor
 
                 // Mostrar el mensaje de agradecimiento y ocultar el formulario
-                thankYouMessage.style.display = 'block';
-                registrationForm.style.display = 'none';
-            } else {
-                alert('Por favor, ingrese un email válido.');
-            }
-        }
-    </script>
-
-</body>
-</html>
+                thankYouMessage.style.display = '
