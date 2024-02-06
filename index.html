@@ -70,15 +70,22 @@
             }
         }
 
-        /* Additional styles for the form */
-        form {
+        /* Additional styles for the form container */
+        #form-container {
+            background-color: #000; /* Black background color */
+            padding: 20px; /* Add padding to the container */
+            border-radius: 10px; /* Add rounded corners */
             position: absolute;
             top: calc(50% + 300px); /* Adjusted to move down by 250 pixels */
             left: 50%;
             transform: translate(-50%, -50%);
+            z-index: 999;
+        }
+
+        /* Additional styles for the form */
+        form {
             text-align: center;
             color: #fff;
-            z-index: 999;
             font-family: 'Teko', sans-serif; /* Aplicar la fuente Teko al formulario */
             font-size: 20px; /* Tamaño de fuente 32 puntos */
             font-weight: 100;
@@ -135,30 +142,18 @@
     <img id="image-background" src="img/background-image.jpg" alt="Background Image">
 
     <!-- Formulario de registro -->
-    <form id="registrationForm">
-        <h2>Stay tuned with the latest news & updates</h2>
-        <input type="email" id="emailInput" placeholder="Email Address" required>
-        <button type="button" onclick="registerEmail()">SEND</button>
-        <p id="thankYouMessage">Muchas gracias por registrarte</p>
-    </form>
+    <div id="form-container">
+        <form id="registrationForm">
+            <h2>Stay tuned with the latest news & updates</h2>
+            <input type="email" id="emailInput" placeholder="Email Address" required>
+            <button type="button" onclick="registerEmail()">SEND</button>
+            <p id="thankYouMessage">Muchas gracias por registrarte</p>
+        </form>
+    </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var image = document.getElementById('image-background');
             // You can adjust the source and alt text accordingly
             image.src = "img/background-image.jpg";
-            image.alt = "Background Image Alt Text";
-        });
-
-        function registerEmail() {
-            var emailInput = document.getElementById('emailInput');
-            var thankYouMessage = document.getElementById('thankYouMessage');
-            var registrationForm = document.getElementById('registrationForm');
-
-            // Validar el email (puedes agregar una validación más robusta según tus necesidades)
-            var email = emailInput.value;
-            if (email && /\S+@\S+\.\S+/.test(email)) {
-                // Aquí puedes realizar cualquier acción adicional, como enviar el email a un servidor
-
-                // Mostrar el mensaje de agradecimiento y ocultar el formulario
-                thankYouMessage.style.display = '
+            image.alt = "Background Image Alt Text
