@@ -74,16 +74,16 @@
 
         /* Additional styles for the form container */
         #form-container {
-            background-color: #000; /* Black background color */
-            padding: 20px; /* Add padding to the container */
-            border-radius: 10px; /* Add rounded corners */
-            position: absolute;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 999;
-            margin-bottom: 10px;
-            object-position: bottom;
-        }
+    background-color: #000; /* Black background color */
+    padding: 20px; /* Add padding to the container */
+    border-radius: 10px; /* Add rounded corners */
+    position: fixed; /* Cambiado de absolute a fixed */
+    bottom: 0; /* Ajusta la distancia desde la parte inferior según sea necesario */
+    left: 50%;
+    transform: translateX(-50%); /* Solo en el eje X para centrar horizontalmente */
+    z-index: 999;
+    margin-bottom: 10px;
+}
 
         /* Additional styles for the form */
         form {
