@@ -4,11 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Company</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap">
     <style>
         body {
             margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
             overflow: hidden; /* Prevent scrolling */
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+            height: 50px; /* Adjust the height as needed */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header img {
+            width: 30px;
+            height: auto;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        header #logo {
+            width: 400px; /* Adjust the width as needed */
+            height: auto;
+            margin-right: 80px;
+            margin-top: 270px;
         }
 
         #image-background {
@@ -21,14 +52,22 @@
             z-index: -1; /* Place the image behind other elements */
         }
 
-        #over-image {
-            position: fixed;
-            width: 30%; /* Ajusta el porcentaje según tus necesidades */
-            height: auto;
-            bottom: 0;
-            right: 0;
-            margin: 2%; /* Ajusta el margen según tus necesidades */
-            z-index: 100; /* Place the image above other elements */
+        /* Responsive styles for mobile */
+        @media (max-width: 767px) {
+            header {
+                height: 40px; /* Adjust the height for mobile */
+            }
+
+            header img {
+                width: 20px; /* Adjust the size for mobile */
+                margin-left: 10px;
+                margin-top: 5px;
+            }
+
+            header #logo {
+                width: 30px; /* Adjust the width for mobile */
+                margin-right: 10px;
+            }
         }
 
         /* Additional styles for the form container */
@@ -41,12 +80,13 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 999;
-            color: #fff;
         }
 
         /* Additional styles for the form */
         form {
             text-align: center;
+            color: #fff;
+            font-family: 'Teko', sans-serif; /* Aplicar la fuente Teko al formulario */
             font-size: 20px; /* Tamaño de fuente 32 puntos */
             font-weight: 100;
             letter-spacing: 1px;
@@ -61,6 +101,7 @@
             margin-right: 10px;
             margin-bottom: 10px;
             box-sizing: border-box;
+            font-family: 'Teko', sans-serif; /* Aplicar la fuente Teko al campo de email */
         }
 
         button {
@@ -72,6 +113,7 @@
             border: none;
             cursor: pointer;
             transition: background-color 0.3s;
+            font-family: 'Teko', sans-serif; /* Aplicar la fuente Teko al botón */
         }
 
         button:hover {
@@ -86,6 +128,16 @@
 </head>
 <body>
 
+    <header>
+        <div>
+            <img src="img/menu.png" alt="Menu Icon">
+            <!-- Use "img/menu.png" for the small icon image -->
+        </div>
+        <div id="logo-container">
+            <img id="logo" src="img/Logo.png" alt="Company Logo">
+        </div>
+    </header>
+
     <!-- Image background -->
     <img id="image-background" src="img/background-image.jpg" alt="Background Image">
 
@@ -99,35 +151,9 @@
         </form>
     </div>
 
-    <!-- Imagen sobre la imagen de fondo -->
-    <img id="over-image" src="img/over-image.png" alt="Over Image">
-
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var image = document.getElementById('image-background');
-            // Puedes ajustar la fuente y el texto según tus necesidades
+            // You can adjust the source and alt text accordingly
             image.src = "img/background-image.jpg";
-            image.alt = "Background Image Alt Text";
-        });
-
-        function registerEmail() {
-            var emailInput = document.getElementById('emailInput');
-            var thankYouMessage = document.getElementById('thankYouMessage');
-            var registrationForm = document.getElementById('registrationForm');
-
-            // Validar el email (puedes agregar una validación más robusta según tus necesidades)
-            var email = emailInput.value;
-            if (email && /\S+@\S+\.\S+/.test(email)) {
-                // Aquí puedes realizar cualquier acción adicional, como enviar el email a un servidor
-
-                // Mostrar el mensaje de agradecimiento y ocultar el formulario
-                thankYouMessage.style.display = 'block';
-                registrationForm.style.display = 'none';
-            } else {
-                alert('Por favor, ingrese un email válido.');
-            }
-        }
-    </script>
-
-</body>
-</html>
+            image.alt = "Background Image Alt Text
