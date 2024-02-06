@@ -94,6 +94,12 @@
         button:hover {
             background-color: #FF8C00; /* Darker shade on hover */
         }
+        
+          /* Estilos para el texto "Registra tu email" */
+    .registration-text {
+      font-family: 'Teko', sans-serif; /* Aplicar la fuente Teko al texto */
+      font-size: 32pt; /* Tamaño de fuente 32 puntos */
+    }
 
         #thankYouMessage {
             display: none;
@@ -115,7 +121,7 @@
 
     <!-- Formulario de registro -->
     <form id="registrationForm">
-        <h2>Stay tuned with the latest news\n & updates:</h2>
+        <h2>Stay tuned with the latest news & updates:</h2>
         <input type="email" id="emailInput" placeholder="Ingrese su email" required>
         <button type="button" onclick="registerEmail()">Enviar</button>
         <p id="thankYouMessage">Muchas gracias por registrarte</p>
