@@ -72,7 +72,9 @@
             }
 
             #form-container {
-                bottom: 5%; /* Adjust the distance from the bottom for mobile */
+                bottom: 10%; /* Adjust the distance from the bottom for mobile */
+                left: 10%;
+                right: 10%;
             }
 
             input[type="email"] {
@@ -90,7 +92,7 @@
 
         /* Additional styles for the form container */
         #form-container {
-            background-color: #231d2b; /* Black background color */
+            background-color: #000; /* Black background color */
             padding: 20px; /* Add padding to the container */
             border-radius: 10px; /* Add rounded corners */
             position: fixed; /* Change from absolute to fixed */
@@ -99,6 +101,8 @@
             transform: translateX(-50%); /* Horizontal centering */
             z-index: 999;
             margin-bottom: 10px;
+            max-width: 600px; /* Set a maximum width for the form container */
+            width: 90%; /* Set a width for the form container */
         }
 
         /* Additional styles for the form */
@@ -143,6 +147,8 @@
             display: none;
             margin-top: 10px;
         }
+
+        
     </style>
 </head>
 <body>
