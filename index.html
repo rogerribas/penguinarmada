@@ -59,6 +59,8 @@
             min-width: 80px;
             width: 70%;
             min-height: 200px;
+            /* Ajuste dinámico del tamaño del formulario */
+            width: calc(70% * 6);
         }
 
         form {
@@ -103,6 +105,35 @@
             margin-top: 10px;
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var image = document.getElementById('image-background');
+            image.src = "img/background-image.jpg";
+            image.alt = "Background Image Alt Text";
+
+            // Verificar la orientación al cargar la página
+            ajustarTamañoForm();
+        });
+
+        // Función para ajustar el tamaño del formulario según la orientación
+        function ajustarTamañoForm() {
+            var formContainer = document.getElementById('form-container');
+            if (esOrientacionVertical()) {
+                formContainer.style.width = "70%";
+                formContainer.style.width = "calc(70% * 6)";
+            } else {
+                formContainer.style.width = "70%";
+            }
+        }
+
+        // Función para verificar la orientación
+        function esOrientacionVertical() {
+            return window.innerHeight > window.innerWidth;
+        }
+
+        // Agregar evento de cambio de orientación
+        window.addEventListener('orientationchange', ajustarTamañoForm);
+    </script>
 </head>
 <body>
 
@@ -122,13 +153,5 @@
             <p id="thankYouMessage">Thank you!</p>
         </form>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var image = document.getElementById('image-background');
-            image.src = "img/background-image.jpg";
-            image.alt = "Background Image Alt Text";
-        });
-    </script>
 </body>
 </html>
