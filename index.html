@@ -10,40 +10,7 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            overflow: hidden;
             background-color: #000;
-        }
-
-        header {
-            text-align: center;
-            padding: 5px;
-            height: 50px;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        header img {
-            width: 30px;
-            height: auto;
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-
-        #image-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            bottom: auto;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top;
-            z-index: -1;
         }
 
         #form-container {
@@ -53,20 +20,19 @@
             position: fixed;
             bottom: 0;
             left: 50%;
-            transform: translate(-50%, 0); /* Solo translada verticalmente */
+            transform: translate(-50%, 0);
             z-index: 999;
             max-width: 500px;
             min-width: 40;
             width: 70%;
-            min-height: 200px; /* Establece un mínimo de píxeles para el contenedor del formulario */
+            min-height: 200px;
         }
 
         form {
             text-align: center;
             color: #fff;
             font-family: 'Teko', sans-serif;
-            font-size: max(20px, 2vmin); /* Tamaño mínimo para el texto */
-            font-weight: 100;
+            font-size: max(20px, 2vmin);
             font-weight: 100;
             letter-spacing: 1px;
         }
@@ -105,15 +71,6 @@
     </style>
 </head>
 <body>
-
-    <header>
-        <div>
-            <img src="img/menu.png" alt="Menu Icon">
-        </div>
-    </header>
-
-    <img id="image-background" src="img/background-image.jpg" alt="Background Image">
-
     <div id="form-container">
         <form id="registrationForm">
             <h2>Stay tuned with the latest news & updates</h2>
