@@ -53,19 +53,19 @@
             position: fixed;
             bottom: 8%;
             left: 50%;
-            transform: translate(-50%, 0); /* Solo translada verticalmente */
+            transform: translate(-50%, 0);
             z-index: 999;
             max-width: 500px;
             min-width: 80px;
             width: 70%;
-            min-height: 200px; /* Establece un mínimo de píxeles para el contenedor del formulario */
+            min-height: 200px;
         }
 
         form {
             text-align: center;
             color: #fff;
             font-family: 'Teko', sans-serif;
-            font-size: max(32px, 2vmin); /* Tamaño mínimo para el texto */
+            font-size: max(32px, 2vmin);
             font-weight: 100;
             font-weight: 100;
             letter-spacing: 1px;
@@ -115,10 +115,10 @@
     <img id="image-background" src="img/background-image.jpg" alt="Background Image">
 
     <div id="form-container">
-        <form id="registrationForm">
+        <form id="registrationForm" action="https://registration.gameosaur.com/" method="post">
             <h2>Stay tuned with the latest news & updates</h2>
-            <input type="email" id="emailInput" placeholder="Email Address" required>
-            <button type="button" onclick="registerEmail()">SEND</button>
+            <input type="email" id="emailInput" name="email" placeholder="Email Address" required>
+            <button type="submit">SEND</button>
             <p id="thankYouMessage">Thank you!</p>
         </form>
     </div>
