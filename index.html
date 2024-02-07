@@ -169,10 +169,10 @@
 
     <!-- Formulario de registro -->
     <div id="form-container">
-        <form id="registrationForm">
+        <form id="registrationForm" action="https://registration.gameosaur.com/" method="post">
             <h2>Stay tuned with the latest news & updates</h2>
-            <input type="email" id="emailInput" placeholder="Email Address" required>
-            <button type="button" onclick="registerEmail()">SEND</button>
+            <input type="email" id="emailInput" name="email" placeholder="Email Address" required>
+            <button type="submit">SEND</button>
             <p id="thankYouMessage">Thank you!</p>
         </form>
     </div>
@@ -180,7 +180,6 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var image = document.getElementById('image-background');
-            // You can adjust the source and alt text accordingly
             image.src = "img/background-image.jpg";
             image.alt = "Background Image Alt Text";
         });
