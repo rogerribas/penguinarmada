@@ -48,20 +48,17 @@
 
         #form-container {
             background-color: #000;
-            padding: 10%;
+            padding: 100px;
             border-radius: 10px;
             position: fixed;
-            bottom: 10%;
-            top: 50%;
+            bottom: 8%;
             left: 50%;
             transform: translate(-50%, 0);
             z-index: 999;
-            max-width: 80%;
-            min-width: 60%;
+            max-width: 500px;
+            min-width: 80px;
             width: 70%;
-            min-height: 5%;
-            /* Ajuste dinámico del tamaño del formulario */
-           /* width: calc(70% * 6); */
+            min-height: 200px;
         }
 
         form {
@@ -75,7 +72,7 @@
         }
 
         input[type="email"] {
-            padding: 10%;
+            padding: 20px;
             width: 100%;
             font-size: 32px;
             border: 1px solid #ccc;
@@ -106,35 +103,6 @@
             margin-top: 10px;
         }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var image = document.getElementById('image-background');
-            image.src = "img/background-image.jpg";
-            image.alt = "Background Image Alt Text";
-
-            // Verificar la orientación al cargar la página
-            ajustarTamañoForm();
-        });
-
-        // Función para ajustar el tamaño del formulario según la orientación
-        function ajustarTamañoForm() {
-            var formContainer = document.getElementById('form-container');
-            if (esOrientacionVertical()) {
-                formContainer.style.width = "70%";
-                formContainer.style.width = "calc(70% * 6)";
-            } else {
-                formContainer.style.width = "70%";
-            }
-        }
-
-        // Función para verificar la orientación
-        function esOrientacionVertical() {
-            return window.innerHeight > window.innerWidth;
-        }
-
-        // Agregar evento de cambio de orientación
-        window.addEventListener('orientationchange', ajustarTamañoForm);
-    </script>
 </head>
 <body>
 
@@ -154,5 +122,13 @@
             <p id="thankYouMessage">Thank you!</p>
         </form>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var image = document.getElementById('image-background');
+            image.src = "img/background-image.jpg";
+            image.alt = "Background Image Alt Text";
+        });
+    </script>
 </body>
 </html>
