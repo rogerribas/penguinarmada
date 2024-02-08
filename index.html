@@ -20,6 +20,35 @@
             background-position: center;
         }
 
+        header {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+            height: 70px; /* Aumenta un 40% la altura del header */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header img {
+    width: 42px; /* Aumenta un 40% el ancho de la imagen */
+    height: auto;
+    margin-left: 20px;
+    margin-top: 10px;
+        }
+
+        header #logo {
+            width: 400px; /* Adjust the width as needed */
+            height: auto;
+            margin-right: 80px;
+            margin-top: 270px;
+        }
+
         #signup-container {
             text-align: center;
             padding: 57.5849088px; /* Reducción del tamaño vertical en un 20% */
@@ -72,6 +101,13 @@
     </style>
 </head>
 <body>
+
+    <header>
+        <div>
+            <img src="img/menu.png" alt="Menu Icon">
+            <!-- Use "img/menu.png" for the small icon image -->
+        </div>
+    </header>
 
        <!-- Signup container and form -->
        <div id="signup-container">
