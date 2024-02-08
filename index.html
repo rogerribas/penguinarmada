@@ -1,88 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Page</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap">
-    <link rel="stylesheet" href="style.css"> <!-- Ruta relativa al archivo de estilo -->
+    <title>Your Company</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap">
     <style>
         body {
-            font-family: 'Teko', sans-serif;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Prevent scrolling */
+            background-color: #000; /* Black background color */
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+            height: 50px; /* Adjust the height as needed */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
             display: flex;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-image: url('/img/background-image.jpg'); /* Ruta absoluta */
-            background-size: cover;
-            background-position: center;
+            justify-content: space-between;
         }
 
-        #signup-container {
-            text-align: center;
-            padding: 57.5849088px; /* Reducción del tamaño vertical en un 20% */
-            background-color: #26213d;
-            border-radius: 35px; /* Redondeo de las esquinas en un 20% */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: calc(100% - 33.2849088px); /* Reducción del tamaño horizontal en un 20% */
-            max-width: 963.9584px; /* Reducción del tamaño máximo en un 20% */
+        header img {
+            width: 30px;
+            height: auto;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        header #logo {
+            width: 400px; /* Adjust the width as needed */
+            height: auto;
+            margin-right: 80px;
+            margin-top: 270px;
+        }
+
+        #image-background {
             position: fixed;
-            bottom: 50px; /* Fijar en la parte inferior */
+            top: 49;
+            left: 0;
+            bottom: auto;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top; /* Mantiene la parte superior de la imagen visible */
+            z-index: -1; /* Place the image behind other elements */
+        }
+
+        /* Responsive styles for mobile */
+        @media (max-width: 767px) {
+            header {
+                height: 40px; /* Adjust the height for mobile */
+            }
+
+            header img {
+                width: 20px; /* Adjust the size for mobile */
+                margin-left: 10px;
+                margin-top: 5px;
+            }
+
+            header #logo {
+                width: 30px; /* Adjust the width for mobile */
+                margin-right: 10px;
+            }
+
+            #form-container {
+                bottom: 10%; /* Adjust the distance from the bottom for mobile */
+                left: 30%;
+                right: 30%;
+            }
+
+            input[type="email"] {
+                width: 100%; /* Adjust the width to 100% for mobile */
+                font-size: 18px; /* Adjust font size for mobile */
+                margin-right: 10%; /* Remove right margin for mobile */
+                margin-bottom: 10px; /* Add bottom margin for mobile */
+                margin-left: 10%;
+            }
+
+            button {
+                padding: 8px 20px; /* Adjust padding for mobile */
+                font-size: 18px; /* Adjust font size for mobile */
+            }
+        }
+
+        /* Additional styles for the form container */
+        #form-container {
+            background-color: #000; /* Black background color */
+            padding: 20px; /* Add padding to the container */
+            border-radius: 10px; /* Add rounded corners */
+            position: fixed; /* Change from absolute to fixed */
+            bottom: 10%; /* Adjust distance from bottom as needed */
             left: 50%;
-            transform: translateX(-50%);
-            box-sizing: border-box;
+            right: 50%;
+            transform: translateX(-50%); /* Horizontal centering */
+            z-index: 999;
+            margin-bottom: 10px;
+            max-width: 600px; /* Set a maximum width for the form container */
+            width: 90%; /* Set a width for the form container */
         }
 
-        #signup-container h2 {
-            font-family: 'Teko', sans-serif;
-            font-size: 48.790470016px;
-            font-weight: 600;
+        /* Additional styles for the form */
+        form {
+            text-align: center;
             color: #fff;
+            font-family: 'Teko', sans-serif; /* Apply Teko font to the form */
+            font-size: 20px; /* Font size 20px */
+            font-weight: 100;
+            letter-spacing: 1px;
         }
 
-        input[type="text"] {
-            padding: 28.99742976px; /* Reducción del tamaño en un 20% */
-            width: calc(100% - 28.99742976px); /* Reducción del tamaño horizontal en un 20% */
-            margin-bottom: 28.99742976px; /* Reducción del tamaño en un 20% */
+        input[type="email"] {
+            padding: 8px;
+            width: 350px;
+            font-size: 22px;
             border: 1px solid #ccc;
-            border-radius: 10px; /* Redondeo de las esquinas en un 20% */
+            border-radius: 8px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
             box-sizing: border-box;
-            font-size: 38.217329px; /* Reducción del tamaño en un 20% */
-            font-weight: 600;
-            color: #fff;
+            font-family: 'Teko', sans-serif; /* Apply Teko font to email field */
         }
 
         button {
-            width: calc(100% - 28.99742976px); /* Reducción del tamaño horizontal en un 20% */
-            padding: 28.99742976px; /* Reducción del tamaño en un 20% */
-            font-size: 54.098928px; /* Reducción del tamaño en un 20% */
-            background-color: #4caf50;
-            color: #fff;
+            padding: 8px 40px;
+            border-radius: 8px;
+            font-size: 22px;
+            background-color: #fffc00; /* Vivid yellow */
+            color: #201829;
             border: none;
-            border-radius: 10px; /* Redondeo de las esquinas en un 20% */
             cursor: pointer;
-            font-family: 'Teko', sans-serif;
+            transition: background-color 0.3s;
+            font-family: 'Teko', sans-serif; /* Apply Teko font to button */
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #FF8C00; /* Darker shade on hover */
         }
+
+        #thankYouMessage {
+            display: none;
+            margin-top: 10px;
+        }
+
+        
     </style>
 </head>
-
 <body>
 
-    <div id="signup-container">
-        <h2>Stay tuned with the last news & updates</h2>
-        <form>
-            <input type="text" id="emailInput" placeholder="Enter your email" required>
-            <br>
-            <button type="submit">SIGN UP</button>
+    <header>
+        <div>
+            <img src="img/menu.png" alt="Menu Icon">
+            <!-- Use "img/menu.png" for the small icon image -->
+        </div>
+    </header>
+
+    <!-- Image background -->
+    <img id="image-background" src="img/background-image.jpg" alt="Background Image">
+
+    <!-- Formulario de registro -->
+    <div id="form-container">
+        <form id="registrationForm">
+            <h2>Stay tuned with the latest news & updates</h2>
+            <input type="email" id="emailInput" placeholder="Email Address" required>
+            <button type="button" onclick="registerEmail()">SEND</button>
+            <p id="thankYouMessage">Thank you!</p>
         </form>
     </div>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var image = document.getElementById('image-background');
+            // You can adjust the source and alt text accordingly
+            image.src = "img/background-image.jpg";
+            image.alt = "Background Image Alt Text";
+        });
+    </script>
 </body>
-
 </html>
