@@ -71,11 +71,6 @@
                 width: 30px; /* Adjust the width for mobile */
                 margin-right: 10px;
             }
-
-            #form-container {
-                bottom: 10%; /* Adjust the distance from the bottom for mobile */
-                left: 30%;
-                right: 30%;
             }
 
             input[type="email"] {
@@ -90,61 +85,57 @@
                 padding: 8px 20px; /* Adjust padding for mobile */
                 font-size: 18px; /* Adjust font size for mobile */
             }
-        }
+
 
         /* Additional styles for the form container */
-        #form-container {
-            background-color: #000; /* Black background color */
-            padding: 20px; /* Add padding to the container */
-            border-radius: 10px; /* Add rounded corners */
-            position: fixed; /* Change from absolute to fixed */
-            bottom: 10%; /* Adjust distance from bottom as needed */
-            left: 50%;
-            right: 50%;
-            transform: translateX(-50%); /* Horizontal centering */
-            z-index: 999;
-            margin-bottom: 10px;
-            max-width: 600px; /* Set a maximum width for the form container */
-            width: 90%; /* Set a width for the form container */
-        }
-
-        /* Additional styles for the form */
-        form {
+        #signup-container {
             text-align: center;
-            color: #fff;
-            font-family: 'Teko', sans-serif; /* Apply Teko font to the form */
-            font-size: 20px; /* Font size 20px */
-            font-weight: 100;
-            letter-spacing: 1px;
+            padding: 57.5849088px; /* Reducción del tamaño vertical en un 20% */
+            background-color: #26213d;
+            border-radius: 35px; /* Redondeo de las esquinas en un 20% */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(100% - 33.2849088px); /* Reducción del tamaño horizontal en un 20% */
+            max-width: 963.9584px; /* Reducción del tamaño máximo en un 20% */
+            position: fixed;
+            bottom: 50px; /* Fijar en la parte inferior */
+            left: 50%;
+            transform: translateX(-50%);
+            box-sizing: border-box;
         }
 
-        input[type="email"] {
-            padding: 8px;
-            width: 350px;
-            font-size: 22px;
+        #signup-container h2 {
+            font-family: 'Teko', sans-serif;
+            font-size: 48.790470016px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        input[type="text"] {
+            padding: 28.99742976px; /* Reducción del tamaño en un 20% */
+            width: calc(100% - 28.99742976px); /* Reducción del tamaño horizontal en un 20% */
+            margin-bottom: 28.99742976px; /* Reducción del tamaño en un 20% */
             border: 1px solid #ccc;
-            border-radius: 8px;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            margin-left: 10px;
+            border-radius: 10px; /* Redondeo de las esquinas en un 20% */
             box-sizing: border-box;
-            font-family: 'Teko', sans-serif; /* Apply Teko font to email field */
+            font-size: 38.217329px; /* Reducción del tamaño en un 20% */
+            font-weight: 600;
+            color: #fff;
         }
 
         button {
-            padding: 8px 40px;
-            border-radius: 8px;
-            font-size: 22px;
-            background-color: #fffc00; /* Vivid yellow */
-            color: #201829;
+            width: calc(100% - 28.99742976px); /* Reducción del tamaño horizontal en un 20% */
+            padding: 28.99742976px; /* Reducción del tamaño en un 20% */
+            font-size: 54.098928px; /* Reducción del tamaño en un 20% */
+            background-color: #4caf50;
+            color: #fff;
             border: none;
+            border-radius: 10px; /* Redondeo de las esquinas en un 20% */
             cursor: pointer;
-            transition: background-color 0.3s;
-            font-family: 'Teko', sans-serif; /* Apply Teko font to button */
+            font-family: 'Teko', sans-serif;
         }
 
         button:hover {
-            background-color: #FF8C00; /* Darker shade on hover */
+            background-color: #45a049;
         }
 
         #thankYouMessage {
@@ -168,13 +159,14 @@
     <img id="image-background" src="img/background-image.jpg" alt="Background Image">
 
     <!-- Formulario de registro -->
-    <div id="form-container">
-        <form id="registrationForm">
-            <h2>Stay tuned with the latest news & updates</h2>
-            <input type="email" id="emailInput" placeholder="Email Address" required>
-            <button type="button" onclick="registerEmail()">SEND</button>
-            <p id="thankYouMessage">Thank you!</p>
-        </form>
+    div id="signup-container">
+    <h2>Stay tuned with the last news & updates</h2>
+    <form>
+        <input type="text" id="emailInput" placeholder="Enter your email" required>
+        <br>
+        <button type="submit">SIGN UP</button>
+    </form>
+</div>
     </div>
 
     <script>
