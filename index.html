@@ -21,12 +21,15 @@
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: calc(100% - 400px); /* Resta 200px de cada lado */
+            width: calc(100% - 20px); /* Ajuste para mantener 10px de distancia a cada lado */
+            max-width: 400px; /* Máximo ancho del formulario */
+            margin: 10px; /* Espaciado alrededor del formulario */
+            box-sizing: border-box;
         }
 
         input[type="text"] {
             padding: 10px;
-            width: calc(100% - 20px); /* Resta 20px para tener 10px de espacio a cada lado */
+            width: calc(100% - 20px); /* Ajuste para mantener 10px de distancia a cada lado */
             margin-bottom: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
