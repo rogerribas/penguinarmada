@@ -3,105 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Company</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap">
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            overflow: hidden; /* Prevent scrolling */
-            background-color: #000; /* Black background color */
-        }
-
-        header {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 5px;
-            height: 50px; /* Adjust the height as needed */
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
+            font-family: 'Teko', sans-serif;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('Img/OverImage.png');
+            background-size: cover;
+            background-position: center;
         }
 
-        header img {
-            width: 30px;
-            height: auto;
-            margin-left: 20px;
-            margin-top: 10px;
+        #signup-container {
+            text-align: center;
+            padding: 33.6px;
+            background-color: #26213d;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(100% - 20px);
+            max-width: 672px;
+            margin: 10px;
+            box-sizing: border-box;
         }
 
-        /* ... (código anterior) ... */
-
-        #image-background {
-            position: fixed;
-            top: 49;
-            left: 0;
-            bottom: auto;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top; /* Mantiene la parte superior de la imagen visible */
-            z-index: -1; /* Place the image behind other elements */
+        input[type="text"] {
+            padding: 16.8px;
+            width: calc(100% - 20px);
+            margin-bottom: 16.8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 22.4px;
+            font-weight: 600;
+            color: #fff;
         }
 
-        /* Responsive styles for mobile */
-        @media (max-width: 767px) {
-            /* ... (código anterior) ... */
+        button {
+            width: calc(100% - 20px);
+            padding: 16.8px;
+            font-size: 26.88px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Teko', sans-serif;
         }
 
-        /* Additional styles for the form container */
-        #form-container {
-            background-color: #000; /* Black background color */
-            padding: 20px; /* Add padding to the container */
-            border-radius: 10px; /* Add rounded corners */
-            position: fixed; /* Change from absolute to fixed */
-            top: 50%; /* Centrar verticalmente en la mitad de la pantalla */
-            left: 50%; /* Centrar horizontalmente en la mitad de la pantalla */
-            transform: translate(-50%, -50%); /* Centrar horizontalmente y verticalmente */
-            z-index: 999;
-            margin-bottom: 10px;
-            max-width: 600px; /* Fijar un ancho máximo para el formulario */
-            width: 90%; /* Ajustar el ancho según sea necesario */
+        button:hover {
+            background-color: #45a049;
         }
-
-        /* ... (código anterior) ... */
     </style>
 </head>
 <body>
 
-    <header>
-        <div>
-            <img src="img/menu.png" alt="Menu Icon">
-            <!-- Use "img/menu.png" for the small icon image -->
-        </div>
-    </header>
-
-    <!-- Image background -->
-    <img id="image-background" src="img/background-image.jpg" alt="Background Image">
-
-    <!-- Formulario de registro -->
-    <div id="form-container">
-        <form id="registrationForm">
-            <h2>Stay tuned with the latest news & updates</h2>
-            <input type="email" id="emailInput" placeholder="Email Address" required>
-            <button type="button" onclick="registerEmail()">SEND</button>
-            <p id="thankYouMessage">Thank you!</p>
+    <div id="signup-container">
+        <h2 style="font-size: 28.8px; font-weight: 600; color: #fff;">Stay tuned with the last news & updates</h2>
+        <form>
+            <input type="text" id="emailInput" placeholder="Enter your email" required>
+            <br>
+            <button type="submit">SIGN UP</button>
         </form>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var image = document.getElementById('image-background');
-            // You can adjust the source and alt text accordingly
-            image.src = "img/background-image.jpg";
-            image.alt = "Background Image Alt Text";
-        });
-    </script>
 </body>
 </html>
