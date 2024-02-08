@@ -47,16 +47,17 @@
         }
 
         #image-background {
-            position: fixed;
-            top: 49;
-            left: 0;
-            bottom: auto;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top; /* Mantiene la parte superior de la imagen visible */
-            z-index: -1; /* Place the image behind other elements */
-        }
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top; /* Mantiene la parte superior de la imagen visible */
+    z-index: -1; /* Coloca la imagen detrás de otros elementos */
+}
+        
 
         /* Responsive styles for mobile */
         @media (max-width: 767px) {
