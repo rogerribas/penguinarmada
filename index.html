@@ -45,6 +45,44 @@
             margin-top: 270px;
         }
 
+        #image-background {
+            position: fixed;
+            top: 49;
+            left: 0;
+            bottom: auto;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top; /* Mantiene la parte superior de la imagen visible */
+            z-index: -1; /* Place the image behind other elements */
+        }
+
+        /* Responsive styles for mobile */
+        @media (max-width: 767px) {
+            header {
+                height: 40px; /* Adjust the height for mobile */
+            }
+
+            header img {
+                width: 20px; /* Adjust the size for mobile */
+                margin-left: 10px;
+                margin-top: 5px;
+            }
+
+            header #logo {
+                width: 30px; /* Adjust the width for mobile */
+                margin-right: 10px;
+            }
+        }
+
+        /* Additional styles for other content (removed signup styles) */
+
+        #thankYouMessage {
+            display: none;
+            margin-top: 10px;
+        }
+
+        /* Signup container and form styles with 20% size increase */
         #signup-container {
             text-align: center;
             padding: 57.5849088px; /* Reducción del tamaño vertical en un 20% */
@@ -115,5 +153,13 @@
         </form>
     </div>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var image = document.getElementById('image-background');
+            // You can adjust the source and alt text accordingly
+            image.src = "img/background-image.jpg";
+            image.alt = "Background Image Alt Text";
+        });
+    </script>
 </body>
 </html>
