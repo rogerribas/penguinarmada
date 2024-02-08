@@ -21,3 +21,6 @@
     width: 30px;
     cursor: pointer;
 }
+input[type="text"]:focus {
+    color: #272121; /* Cambiar a negro u otro color deseado */
+}
