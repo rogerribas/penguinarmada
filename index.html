@@ -80,6 +80,57 @@
             margin-top: 10px;
         }
 
+        /* Signup container and form styles */
+        #signup-container {
+            text-align: center;
+            padding: 57.5849088px; /* Reducción del tamaño vertical en un 20% */
+            background-color: #26213d;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(100% - 33.2849088px); /* Reducción del tamaño horizontal en un 20% */
+            max-width: 963.9584px; /* Reducción del tamaño máximo en un 20% */
+            position: fixed;
+            bottom: 50px; /* Fijar en la parte inferior */
+            left: 50%;
+            transform: translateX(-50%);
+            box-sizing: border-box;
+        }
+
+        #signup-container h2 {
+            font-family: 'Teko', sans-serif;
+            font-size: 48.790470016px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        input[type="text"] {
+            padding: 28.99742976px; /* Reducción del tamaño en un 20% */
+            width: calc(100% - 28.99742976px); /* Reducción del tamaño horizontal en un 20% */
+            margin-bottom: 28.99742976px; /* Reducción del tamaño en un 20% */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 38.217329px; /* Reducción del tamaño en un 20% */
+            font-weight: 600;
+            color: #fff;
+        }
+
+        button {
+            width: calc(100% - 28.99742976px); /* Reducción del tamaño horizontal en un 20% */
+            padding: 28.99742976px; /* Reducción del tamaño en un 20% */
+            font-size: 54.098928px; /* Reducción del tamaño en un 20% */
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Teko', sans-serif;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
     </style>
 </head>
 <body>
@@ -94,7 +145,15 @@
     <!-- Image background -->
     <img id="image-background" src="img/background-image.jpg" alt="Background Image">
 
-    <!-- Other content (removed signup section) -->
+    <!-- Signup container and form -->
+    <div id="signup-container">
+        <h2>Stay tuned with the last news & updates</h2>
+        <form>
+            <input type="text" id="emailInput" placeholder="Enter your email" required>
+            <br>
+            <button type="submit">SIGN UP</button>
+        </form>
+    </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
