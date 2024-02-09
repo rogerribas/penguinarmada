@@ -84,7 +84,7 @@
             margin-top: 10px;
             font-family: 'Rajdhani', sans-serif; /* Usa la misma fuente que el texto del contenedor */
             font-size: 20px; /* Ajusta el tamaño de la fuente según sea necesario */
-            color: #e5e5e5;
+            color: #818181;
         }
 
         /* Signup container and form styles with 20% size increase */
@@ -160,7 +160,7 @@
        <!-- Signup container and form -->
        <div id="signup-container">
         <h2>STAY TUNED WITH THE LATEST NEWS & UPDATES</h2>
-        <form action="https://registration.gameosaur.com/" method="post">
+        <form action="https://registration.gameosaur.com/" method="post" id="signup-form"> <!-- Aquí se agregó el ID -->
             <input type="text" id="emailInput" placeholder="Enter your email" name="email" required>
             <br>
             <button type="submit">SIGN UP</button>
@@ -191,7 +191,7 @@
                 thankYouMessage.style.display = 'block';
 
                 // Opcional: Puedes ocultar el formulario si lo deseas
-                form.style.display = 'none';
+                //form.style.display = 'none';
             });
         });
     </script>
