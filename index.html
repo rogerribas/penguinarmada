@@ -82,6 +82,9 @@
         #thankYouMessage {
             display: none;
             margin-top: 10px;
+            font-family: 'Rajdhani', sans-serif; /* Usa la misma fuente que el texto del contenedor */
+            font-size: 20px; /* Ajusta el tamaño de la fuente según sea necesario */
+            color: #e5e5e5;
         }
 
         /* Signup container and form styles with 20% size increase */
@@ -164,12 +167,32 @@
         </form>
     </div>
 
+  <!-- Thank you message -->
+  <div id="thankYouMessage">
+    Thank you for signing up!
+</div>
+
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var image = document.getElementById('image-background');
             // You can adjust the source and alt text accordingly
             image.src = "img/background-image.jpg";
             image.alt = "Background Image Alt Text";
+
+           // Obtén el formulario y escucha el evento de envío
+           var form = document.getElementById('signup-form');
+            form.addEventListener('submit', function(event) {
+                // Evita el envío del formulario predeterminado
+                event.preventDefault();
+
+                // Muestra el mensaje de agradecimiento
+                var thankYouMessage = document.getElementById('thankYouMessage');
+                thankYouMessage.style.display = 'block';
+
+                // Opcional: Puedes ocultar el formulario si lo deseas
+                form.style.display = 'none';
+            });
         });
     </script>
 </body>
